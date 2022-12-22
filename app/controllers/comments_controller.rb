@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_post
-  before_action :set_comment, only: %i[show destroy]
+  before_action :set_comment, only: %i[show edit destroy]
 
   def index
     @comments = @post.comments
@@ -11,6 +11,8 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
   end
+
+  def edit; end
 
   def create
     @comment = @post.comments.create(comment_params)

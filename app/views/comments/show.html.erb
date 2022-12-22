@@ -2,6 +2,7 @@
   <p><%= @comment.content %></p>
 
   <div>
+    <%= link_to "Edit", edit_comment_path(@comment, post_id: @post.id) %> |
     <%= button_to "Destroy", @comment, method: :delete %>
   </div>
 <% end %>

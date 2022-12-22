@@ -8,5 +8,6 @@
 
   <div>
     <%= form.submit %>
+    <%= link_to "Cancel", comment_path(comment, post_id: post.id) if comment.persisted? %>
   </div>
 <% end %>
