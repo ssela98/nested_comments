@@ -1,5 +1,5 @@
 <%= turbo_stream.prepend dom_id(@post, :comments) do %>
-  <%= turbo_frame_tag dom_id(@comment), src: comment_path(@comment, post_id: @post.id) %>
+  <%= turbo_frame_tag @comment, src: comment_path(@comment, post_id: @post.id) %>
 <% end %>
 
 <%= turbo_stream.replace dom_id(@post, :new_comment) do %>
