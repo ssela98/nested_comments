@@ -28,6 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_202942) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "comments", column: "parent_id"
-  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "comments", column: "parent_id", on_delete: :cascade
+  add_foreign_key "comments", "posts", on_delete: :cascade
 end
