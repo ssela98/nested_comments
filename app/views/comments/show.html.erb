@@ -1,3 +1,7 @@
 <%= turbo_frame_tag @comment do %>
   <p><%= @comment.content %></p>
+
+  <div>
+    <%= button_to "Destroy", @comment, method: :delete %>
+  </div>
 <% end %>
