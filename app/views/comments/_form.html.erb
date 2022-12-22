@@ -1,0 +1,12 @@
+<%= form_with(model: comment) do |form| %>
+  <%= hidden_field_tag :post_id, post.id %>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
