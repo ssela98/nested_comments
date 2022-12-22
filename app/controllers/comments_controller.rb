@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def show; end
 
   def new
+    @parent = Comment.find_by(id: params[:parent_id])
     @comment = Comment.new
   end
 

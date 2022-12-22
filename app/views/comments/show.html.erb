@@ -3,6 +3,9 @@
 
   <div>
     <%= link_to "Edit", edit_comment_path(@comment, post_id: @post.id) %> |
-    <%= button_to "Destroy", @comment, method: :delete %>
+    <%= button_to "Destroy", @comment, method: :delete %> |
+    <%= link_to "Reply", new_comment_path(parent_id: @comment.id, post_id: @post.id), data: { turbo_frame: dom_id(@comment, :new_comment) } %>
   </div>
+
+  <%= turbo_frame_tag dom_id(@comment, :new_comment) %>
 <% end %>
