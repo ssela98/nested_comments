@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(@post, :comments) do %>
   <% @comments.each do |comment| %>
-    <p><%= comment.content %></p>
+    <%= turbo_frame_tag dom_id(comment), src: comment_path(comment, post_id: @post.id) %>
   <% end %>
 <% end %>
