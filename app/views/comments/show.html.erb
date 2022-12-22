@@ -1,11 +1,19 @@
 <%= turbo_frame_tag @comment do %>
-  <p><%= @comment.content %></p>
+  <div style="<%= 'padding-left: 2px; border-left: 2px solid grey;' if @parent %>">
+    <p><%= @comment.content %></p>
 
-  <div>
-    <%= link_to "Edit", edit_comment_path(@comment, post_id: @post.id) %> |
-    <%= button_to "Destroy", @comment, method: :delete %> |
-    <%= link_to "Reply", new_comment_path(parent_id: @comment.id, post_id: @post.id), data: { turbo_frame: dom_id(@comment, :new_comment) } %>
+    <div>
+      <%= link_to "Edit", edit_comment_path(@comment, post_id: @post.id) %> |
+      <%= button_to "Destroy", @comment, method: :delete %> |
+      <%= link_to "Reply", new_comment_path(parent_id: @comment.id, post_id: @post.id), data: { turbo_frame: dom_id(@comment, :new_comment) } %>
+    </div>
+
+    <%= turbo_frame_tag dom_id(@comment, :new_comment) %>
+
+    <%= turbo_frame_tag dom_id(@comment, :comments) do %>
+      <% @comment.comments.each do |comment| %>
+        <%= turbo_frame_tag dom_id(comment), src: comment_path(comment, post_id: @post.id, parent_id: @comment.id) %>
+      <% end %>
+    <% end %>
   </div>
-
-  <%= turbo_frame_tag dom_id(@comment, :new_comment) %>
 <% end %>
