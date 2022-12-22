@@ -1,24 +1,11 @@
-# README
+# Rails 7 (Turbo & Hotwire): Reddit-like Nested Comments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the repository linked to the Medium article where I give a sneak peak into the possibilities that the newest version of Rails (version 7 at the time of writing) brings.
 
-Things you may want to cover:
+This application tries to replicate the comments' format of the well-known platform Reddit, all the while making use of `turbo_streams`, `turbo_frames` and the likes as much as possible.
 
-* Ruby version
+If you notice any errors, or if you have any suggested improvements, then please let me know :)
 
-* System dependencies
+Other than that, enjoy digging in!
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### P.S.A.: No JavaScript was ~harmed~ coded during the development of this!
